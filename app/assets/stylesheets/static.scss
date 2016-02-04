@@ -7,8 +7,15 @@ body {
 
 .notice {
   background: rgb(217, 188, 35);
+  //padding: 3%;
 }
 
 .alert {
   background: rgb(168, 50, 82);
+  //padding:3%;
+}
+
+.notice span, .alert span {
+  font-style: bold;
+  float:right;
 }
