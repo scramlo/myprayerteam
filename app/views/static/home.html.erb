@@ -1,6 +1,14 @@
-<h1>Welcome to MyPrayerTeam.org</h1>
+  <% if !user_signed_in? %>
+    <h1>Welcome to MyPrayerTeam.org</h1>
+  <% end %>
   <% if user_signed_in? %>
-    # do something
+    <h1>Welcome <%= current_user.email %>!</h1>
+    <ul>
+      <li>Create Prayer Request</li>
+      <li>Create Praise</li>
+      <li>Update My Prayer Requests</li>
+      <li>Pray for Friends</li>
+    </ul>
   <% else %>
   <p>
     <%= link_to "Log in", new_user_session_path, class: "" %>
