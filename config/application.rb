@@ -22,5 +22,9 @@ module Myprayerteam
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    #Recommended by Devise if only using Ruby 3.2
+    config.assets.initialize_on_precompile = false
+
   end
 end
