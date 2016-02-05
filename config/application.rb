@@ -26,5 +26,8 @@ module Myprayerteam
     #Recommended by Devise if only using Ruby 3.2
     config.assets.initialize_on_precompile = false
 
+    #Changes NavLynx default selected class to "active"
+    config.nav_lynx.selected_class = 'active'
+
   end
 end

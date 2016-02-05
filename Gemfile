@@ -30,6 +30,8 @@ gem 'devise', '~> 3.5', '>= 3.5.6'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 ##Font Awesome
 gem 'font-awesome-rails', '~> 4.5'
+##NavLynx (Makes Generating Links Easier, Especially Making them Active Class)
+gem 'nav_lynx', '~> 1.1', '>= 1.1.1'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

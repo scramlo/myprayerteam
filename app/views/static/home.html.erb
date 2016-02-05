@@ -1,18 +1,23 @@
-  <% if !user_signed_in? %>
-    <h1>Welcome to MyPrayerTeam.org</h1>
-  <% end %>
-  <% if user_signed_in? %>
-    <h1>Welcome <%= current_user.email %>!</h1>
-    <ul>
-      <li><%= link_to 'Create Prayer Request', new_prayer_path %></li>
-      <li><%= link_to 'Create Praise', new_prayer_path %></li>
-      <li><%= link_to 'View/Update My Prayer Requests', prayers_path %></li>
-      <li><%= link_to 'View/Update My Praises', praises_path %></li>
-      <li>View My Prayer Team</li>
-    </ul>
-  <% else %>
-  <p>
-    <%= link_to "Log in", new_user_session_path, class: "" %>
-    <%= link_to "Sign up", new_user_registration_path, class: "" %>
-  </p>
-  <% end %>
+<% if !user_signed_in? %>
+  <div class="jumbotron">
+    <h1 class="display-3">Welcome to MyPrayerTeam.org</h1>
+    <p class="lead">Easily keep a team of people up-to-date on your praises and prayer requests!</p>
+    <hr class="m-y-md">
+    <p>We all want to pray for others and know that others are praying for us, now there is a simple solution.</p>
+    <p class="lead">
+      <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary btn-lg", role: "button" %>
+      <%= link_to "Log In", new_user_session_path, class: "btn btn-info btn-lg", role: "button" %>
+    </p>
+  </div>
+<% end %>
+
+<% if user_signed_in? %>
+  <h1>Welcome <%= current_user.email %>!</h1>
+  <ul>
+    <li><%= link_to 'Create Prayer Request', new_prayer_path %></li>
+    <li><%= link_to 'Create Praise', new_prayer_path %></li>
+    <li><%= link_to 'View/Update My Prayer Requests', prayers_path %></li>
+    <li><%= link_to 'View/Update My Praises', praises_path %></li>
+    <li>View My Prayer Team</li>
+  </ul>
+<% end %>

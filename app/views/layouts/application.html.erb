@@ -7,19 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-<nav>
-  <%= link_to "Home", root_path %>
-  <%= link_to "About", about_path %>
-  <%= link_to "Prayer Requests", prayers_path %>
-  <%= link_to "Praises", praises_path %>
-  <% if user_signed_in? %>
-    <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-  <% else %>
-    <%= link_to "Log in", new_user_session_path %>
-  <% end %>
-</nav>
-<%= yield %>
+  <%= notice %>
+  <%= alert %>
+  <%= render "partials/nav" %>
+  <div class="container">
+    <%= yield %>
+  </div> <!-- End Main Container -->
 </body>
 </html>
