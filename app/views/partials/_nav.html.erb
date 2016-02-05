@@ -19,6 +19,7 @@
         <% if user_signed_in? %>
           <%= nav_link_to "My Prayers", prayers_path, {}, {:wrapper => 'li'} %>
           <%= nav_link_to "My Praises", praises_path, {}, {:wrapper => 'li'} %>
+          <%= nav_link_to "Answered", answered_path, {}, {:wrapper => 'li'} %>
         <% end %>
       </ul>
       <% if user_signed_in? %>

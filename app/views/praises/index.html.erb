@@ -23,15 +23,11 @@
           <%= link_to praise, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" do %>
             <%= fa_icon "trash" %>
           <% end %>
+          <%= link_to praise_path(praise), class: "btn btn-default pull-right" do %>
+            <%= fa_icon "comment" %> Comments
+          <% end %>
         </div>
       </div>
-      <% unless praise === @praises.last %>
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-      <% end %>
     <% end %>
 
 <br>

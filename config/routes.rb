@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :prayers
   devise_for :users
   root 'static#home'
-
+  get 'answered' => 'static#answered'
   get 'about' => 'static#about'
 
   # The priority is based upon order of creation: first created -> highest priority.

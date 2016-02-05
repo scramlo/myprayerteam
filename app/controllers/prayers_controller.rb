@@ -5,7 +5,7 @@ class PrayersController < ApplicationController
   # GET /prayers.json
   def index
     @user = current_user
-    @prayers = @user.prayers.reverse
+    @prayers = @user.prayers.where(:answered => FALSE).reverse
   end
 
   # GET /prayers/1

@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 <h1>
-  My Prayers
+  Answered Prayer
   <%= link_to new_prayer_path, class: "btn btn-success" do %>
     <%= fa_icon "plus" %>
   <% end %>
 </h1>
 
-    <% @prayers.each do |prayer| %>
+    <% @answered.each do |prayer| %>
       <div class="panel panel-primary">
         <div class="panel-heading">
           <%= prayer.title %>
@@ -28,5 +28,3 @@
         </div>
       </div>
     <% end %>
-
-<br>

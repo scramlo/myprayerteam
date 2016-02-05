@@ -1,19 +1,98 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @prayer.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @prayer.description %>
-</p>
-
-<p>
-  <strong>Answered:</strong>
-  <%= @prayer.answered %>
-</p>
-
-<%= link_to 'Edit', edit_prayer_path(@prayer) %> |
 <%= link_to 'Back', prayers_path %>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <%= @prayer.title %>
+    <span class="pull-right"><%= fa_icon "calendar" %> <%= @prayer.created_at.strftime("%A, %b %d, %Y at %H:%M") %></span>
+  </div>
+  <div class="panel-body">
+    <%= @prayer.description %>
+  </div>
+  <div class="panel-footer">
+    <% if @prayer.user == current_user %>
+      <%= link_to edit_prayer_path(@prayer), class: "btn btn-info" do %>
+        <%= fa_icon "pencil" %>
+      <% end %>
+      <%= link_to @prayer, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" do %>
+        <%= fa_icon "trash" %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<ul class="media-list">
+  <li class="media">
+    <div class="media-left">
+      <a href="#">
+        <img class="media-object img-circle" src="http://lorempixel.com/64/64/people/7" alt="profile-img">
+      </a>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">Kelly R.<br><small>11:45a, Tuesday, February 05, 2016</small></h4>
+      Just prayed for you! Hang in there!
+
+    </div>
+  </li>
+  <hr>
+  <li class="media">
+    <div class="media-left">
+      <a href="#">
+        <img class="media-object img-circle" src="http://lorempixel.com/64/64/people/3" alt="profile-img">
+      </a>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">James B.<br><small>11:45a, Tuesday, February 05, 2016</small></h4>
+      A lectus alias varius itaque, porttitor odio curae eleifend hic nunc assumenda? Quae leo cursus totam! Exercitation, eius convallis nascetur.
+
+    </div>
+  </li>
+  <hr>
+  <li class="media">
+    <div class="media-left">
+      <a href="#">
+        <img class="media-object img-circle" src="http://lorempixel.com/64/64/people/1" alt="profile-img">
+      </a>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">Jess J.<br><small>11:45a, Tuesday, February 05, 2016</small></h4>
+      Habitasse occaecati dignissim, eaque sint consequatur? Aperiam sapien! Labore massa harum exercitationem, odio cubilia ligula! Ad, sed habitasse scelerisque facilisi.
+    </div>
+  </li>
+  <hr>
+  <li class="media">
+    <div class="media-left">
+      <a href="#">
+        <img class="media-object img-circle" src="http://lorempixel.com/64/64/people/7" alt="profile-img">
+      </a>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">Kelly R.<br><small>11:45a, Tuesday, February 05, 2016</small></h4>
+      Just prayed for you! Hang in there!
+
+    </div>
+  </li>
+  <hr>
+  <li class="media">
+    <div class="media-left">
+      <a href="#">
+        <img class="media-object img-circle" src="http://lorempixel.com/64/64/people/3" alt="profile-img">
+      </a>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">James B.<br><small>11:45a, Tuesday, February 05, 2016</small></h4>
+      A lectus alias varius itaque, porttitor odio curae eleifend hic nunc assumenda? Quae leo cursus totam! Exercitation, eius convallis nascetur.
+
+    </div>
+  </li>
+  <hr>
+  <li class="media">
+    <div class="media-left">
+      <a href="#">
+        <img class="media-object img-circle" src="http://lorempixel.com/64/64/people/1" alt="profile-img">
+      </a>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">Jess J.<br><small>11:45a, Tuesday, February 05, 2016</small></h4>
+      Habitasse occaecati dignissim, eaque sint consequatur? Aperiam sapien! Labore massa harum exercitationem, odio cubilia ligula! Ad, sed habitasse scelerisque facilisi.
+
+    </div>
+  </li>
+</ul>
