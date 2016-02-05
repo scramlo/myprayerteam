@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @praise.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @praise.description %>
+</p>
+
+<%= link_to 'Edit', edit_praise_path(@praise) %> |
+<%= link_to 'Back', praises_path %>

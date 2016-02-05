@@ -12,6 +12,8 @@
 <nav>
   <%= link_to "Home", root_path %>
   <%= link_to "About", about_path %>
+  <%= link_to "Prayer Requests", prayers_path %>
+  <%= link_to "Praises", praises_path %>
   <% if user_signed_in? %>
     <%= link_to "Log out", destroy_user_session_path, method: :delete %>
   <% else %>

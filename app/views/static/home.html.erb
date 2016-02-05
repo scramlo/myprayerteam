@@ -4,10 +4,11 @@
   <% if user_signed_in? %>
     <h1>Welcome <%= current_user.email %>!</h1>
     <ul>
-      <li>Create Prayer Request</li>
-      <li>Create Praise</li>
-      <li>Update My Prayer Requests</li>
-      <li>Pray for Friends</li>
+      <li><%= link_to 'Create Prayer Request', new_prayer_path %></li>
+      <li><%= link_to 'Create Praise', new_prayer_path %></li>
+      <li><%= link_to 'View/Update My Prayer Requests', prayers_path %></li>
+      <li><%= link_to 'View/Update My Praises', praises_path %></li>
+      <li>View My Prayer Team</li>
     </ul>
   <% else %>
   <p>

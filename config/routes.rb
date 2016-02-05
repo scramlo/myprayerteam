@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :praises
+  resources :prayers
   devise_for :users
   root 'static#home'
 
