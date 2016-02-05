@@ -15,6 +15,8 @@ class PraisesController < ApplicationController
   # GET /praises/new
   def new
     @praise = Praise.new
+    @praise.user_id = current_user.id
+    @praise.save
   end
 
   # GET /praises/1/edit

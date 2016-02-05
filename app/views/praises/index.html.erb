@@ -14,14 +14,16 @@
 
   <tbody>
     <% @praises.each do |praise| %>
-      <tr>
-        <td><%= praise.created_at %></td>
-        <td><%= praise.title %></td>
-        <td><%= praise.description %></td>
-        <td><%= link_to 'Show', praise %></td>
-        <td><%= link_to 'Edit', edit_praise_path(praise) %></td>
-        <td><%= link_to 'Destroy', praise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <% if praise.user == current_user %>
+        <tr>
+          <td><%= praise.created_at.strftime("%A, %b %d, %Y") %></td>
+          <td><%= praise.title %></td>
+          <td><%= praise.description %></td>
+          <td><%= link_to 'Show', praise %></td>
+          <td><%= link_to 'Edit', edit_praise_path(praise) %></td>
+          <td><%= link_to 'Destroy', praise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>

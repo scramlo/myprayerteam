@@ -5,6 +5,7 @@ class PrayersController < ApplicationController
   # GET /prayers.json
   def index
     @prayers = Prayer.all
+    @users = User.all
   end
 
   # GET /prayers/1
@@ -15,6 +16,8 @@ class PrayersController < ApplicationController
   # GET /prayers/new
   def new
     @prayer = Prayer.new
+    @prayer.user_id = current_user.id
+    @prayer.save
   end
 
   # GET /prayers/1/edit
@@ -69,6 +72,6 @@ class PrayersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def prayer_params
-      params.require(:prayer).permit(:title, :description, :answered)
+      params.require(:prayer).permit(:title, :description, :answered, :email)
     end
 end
