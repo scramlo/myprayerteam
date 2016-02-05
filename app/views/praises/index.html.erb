@@ -1,33 +1,37 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Praises</h1>
+<h1>
+  My Praises
+  <%= link_to new_praise_path, class: "btn btn-success" do %>
+    <%= fa_icon "plus" %>
+  <% end %>
+</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Created at</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @praises.each do |praise| %>
-      <% if praise.user == current_user %>
-        <tr>
-          <td><%= praise.created_at.strftime("%A, %b %d, %Y") %></td>
-          <td><%= praise.title %></td>
-          <td><%= praise.description %></td>
-          <td><%= link_to 'Show', praise %></td>
-          <td><%= link_to 'Edit', edit_praise_path(praise) %></td>
-          <td><%= link_to 'Destroy', praise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <%= praise.title %>
+          <span class="pull-right"><%= fa_icon "calendar" %> <%= praise.created_at.strftime("%A, %b %d, %Y at %H:%M") %></span>
+        </div>
+        <div class="panel-body">
+          <%= praise.description %>
+        </div>
+        <div class="panel-footer">
+          <%= link_to edit_praise_path(praise), class: "btn btn-info" do %>
+            <%= fa_icon "pencil" %>
+          <% end %>
+          <%= link_to praise, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" do %>
+            <%= fa_icon "trash" %>
+          <% end %>
+        </div>
+      </div>
+      <% unless praise === @praises.last %>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
       <% end %>
     <% end %>
-  </tbody>
-</table>
 
 <br>
-
-<%= link_to 'New Praise', new_praise_path %>

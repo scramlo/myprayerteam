@@ -1,34 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Prayers</h1>
+<h1>
+  My Prayers
+  <%= link_to new_prayer_path, class: "btn btn-success" do %>
+    <%= fa_icon "plus" %>
+  <% end %>
+</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Created At</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Answered</th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @prayers.each do |prayer| %>
-      <% if prayer.user == current_user %>
-        <tr>
-          <td><%= prayer.created_at.strftime("%A, %b %d, %Y") %></td>
-          <td><%= prayer.title %></td>
-          <td><%= prayer.description %></td>
-          <td><%= prayer.answered %></td>
-          <td><%= link_to 'Show', prayer %></td>
-          <td><%= link_to 'Edit', edit_prayer_path(prayer) %></td>
-          <td><%= link_to 'Destroy', prayer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <%= prayer.title %>
+          <span class="pull-right"><%= fa_icon "calendar" %> <%= prayer.created_at.strftime("%A, %b %d, %Y") %></span>
+        </div>
+        <div class="panel-body">
+          <%= prayer.description %>
+        </div>
+        <div class="panel-footer">
+          <%= link_to edit_prayer_path(prayer), class: "btn btn-info" do %>
+            <%= fa_icon "pencil" %>
+          <% end %>
+          <%= link_to prayer, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" do %>
+            <%= fa_icon "trash" %>
+          <% end %>
+          <a href="#" class="btn btn-default pull-right"><i class="fa fa-comment"></i> Comments</a>
+        </div>
+      </div>
+      <% unless prayer === @prayers.last %>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
       <% end %>
     <% end %>
-  </tbody>
-</table>
 
 <br>
-
-<%= link_to 'New Prayer', new_prayer_path %>

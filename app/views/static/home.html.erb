@@ -17,12 +17,13 @@
     <div class="panel-body">
       <div class="row">
         <div class="col-md-6">
-          <h3>Read Something</h3>
+          <h3>Recent Comments</h3>
+          <hr>
           <ul class="media-list">
             <li class="media">
               <div class="media-left">
                 <a href="#">
-                  <img class="media-object img-circle" src="http://placehold.it/64x64" alt="profile-img">
+                  <img class="media-object img-circle" src="http://lorempixel.com/64/64/people/7" alt="profile-img">
                 </a>
               </div>
               <div class="media-body">
@@ -34,7 +35,7 @@
             <li class="media">
               <div class="media-left">
                 <a href="#">
-                  <img class="media-object img-circle" src="http://placehold.it/64x64" alt="profile-img">
+                  <img class="media-object img-circle" src="http://lorempixel.com/64/64/people/3" alt="profile-img">
                 </a>
               </div>
               <div class="media-body">
@@ -46,7 +47,7 @@
             <li class="media">
               <div class="media-left">
                 <a href="#">
-                  <img class="media-object img-circle" src="http://placehold.it/64x64" alt="profile-img">
+                  <img class="media-object img-circle" src="http://lorempixel.com/64/64/people/1" alt="profile-img">
                 </a>
               </div>
               <div class="media-body">
@@ -58,7 +59,8 @@
           </ul>
         </div>
         <div class="col-md-6">
-          <h3>Do Something</h3>
+          <h3>Hey, <%= current_user.email %></h3>
+          <hr>
           <p class="text-center">
             <%= link_to new_prayer_path, class: "btn btn-success" do %>
               <%= fa_icon "plus" %> Request
@@ -68,7 +70,7 @@
             <%= link_to praises_path, class: "btn btn-info" do %>
               <%= fa_icon "eye" %> Praises
             <% end %>
-            <img src="http://placehold.it/200x200" alt="Profile Picture" id="profile-img" class="img-circle img-responsive">
+            <img src="http://lorempixel.com/200/200/people/9" alt="Profile Picture" id="profile-img" class="img-circle img-responsive">
             <%= link_to new_praise_path, class: "btn btn-primary" do %>
               <%= fa_icon "plus" %> Praise
             <% end %>

@@ -4,8 +4,8 @@ class PrayersController < ApplicationController
   # GET /prayers
   # GET /prayers.json
   def index
-    @prayers = Prayer.all
-    @users = User.all
+    @user = current_user
+    @prayers = @user.prayers.reverse
   end
 
   # GET /prayers/1
