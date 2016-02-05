@@ -15,10 +15,12 @@
     <div class="collapse navbar-collapse" id="main-nav">
       <ul class="nav navbar-nav">
         <%= nav_link_to "Home", root_path, {}, {:wrapper => 'li'} %>
-        <%= nav_link_to 'About', about_path, {}, {:wrapper => 'li'} %>
+        <% unless user_signed_in? %>
+          <%= nav_link_to 'About', about_path, {}, {:wrapper => 'li'} %>
+        <% end %>
         <% if user_signed_in? %>
-          <%= nav_link_to "My Prayers", prayers_path, {}, {:wrapper => 'li'} %>
-          <%= nav_link_to "My Praises", praises_path, {}, {:wrapper => 'li'} %>
+          <%= nav_link_to "My Profile", profiles_path, {}, {:wrapper => 'li'} %>
+          <%= nav_link_to "My Team", team_path, {}, {:wrapper => 'li'} %>
           <%= nav_link_to "Answered", answered_path, {}, {:wrapper => 'li'} %>
         <% end %>
       </ul>

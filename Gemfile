@@ -34,6 +34,8 @@ gem 'font-awesome-rails', '~> 4.5'
 gem 'nav_lynx', '~> 1.1', '>= 1.1.1'
 ##Bootswatch styles
 gem 'bootswatch-rails', '~> 3.3', '>= 3.3.5'
+##Easier following each other
+gem 'acts_as_follower', '~> 0.2.1'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

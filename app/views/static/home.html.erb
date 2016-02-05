@@ -74,7 +74,7 @@
             <%= link_to praises_path, class: "btn btn-info" do %>
               <%= fa_icon "eye" %> Praises
             <% end %>
-            <img src="http://lorempixel.com/200/200/people/9" alt="Profile Picture" id="profile-img" class="img-circle img-responsive">
+            <img src="<%= @profile_img %>" alt="Profile Picture" id="home-profile-img" class="img-circle img-responsive">
             <%= link_to new_praise_path, class: "btn btn-primary" do %>
               <%= fa_icon "plus" %> Praise
             <% end %>

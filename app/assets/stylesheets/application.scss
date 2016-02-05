@@ -24,7 +24,17 @@ h1 {
   word-wrap: break-word;
 }
 
-#profile-img {
+#home-profile-img {
   display:inline-block;
+  height:200px;
+  width:200px;
+}
+
+#profile-img {
+  height:200px;
+  width:200px;
+}
+
+#home-profile-img, #profile-img, #team-profile-image {
   margin:2%;
 }

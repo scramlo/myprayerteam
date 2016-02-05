@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
+  resources :profiles
   resources :praises
   resources :prayers
   devise_for :users
+
   root 'static#home'
+
+  get 'team' => 'static#team'
   get 'answered' => 'static#answered'
   get 'about' => 'static#about'
 
