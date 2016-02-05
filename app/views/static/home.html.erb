@@ -3,7 +3,7 @@
     <h1 class="display-3">Welcome to MyPrayerTeam.org</h1>
     <p class="lead">Easily keep a team of people up-to-date on your praises and prayer requests!</p>
     <hr class="m-y-md">
-    <p>We all want to pray for others and know that others are praying for us, now there is a simple solution.</p>
+    <p>We all want to pray for others and like to know others are praying for us, now there is a simple solution.</p>
     <p class="lead">
       <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary btn-lg", role: "button" %>
       <%= link_to "Log In", new_user_session_path, class: "btn btn-info btn-lg", role: "button" %>
@@ -12,12 +12,75 @@
 <% end %>
 
 <% if user_signed_in? %>
-  <h1>Welcome <%= current_user.email %>!</h1>
-  <ul>
-    <li><%= link_to 'Create Prayer Request', new_prayer_path %></li>
-    <li><%= link_to 'Create Praise', new_prayer_path %></li>
-    <li><%= link_to 'View/Update My Prayer Requests', prayers_path %></li>
-    <li><%= link_to 'View/Update My Praises', praises_path %></li>
-    <li>View My Prayer Team</li>
-  </ul>
+<div class="row">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Read Something</h3>
+          <ul class="media-list">
+            <li class="media">
+              <div class="media-left">
+                <a href="#">
+                  <img class="media-object img-circle" src="http://placehold.it/64x64" alt="profile-img">
+                </a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">Kelly R.<br><small>11:45a, Tuesday, February 05, 2016</small></h4>
+                Just prayed for you! Hang in there!
+              </div>
+            </li>
+            <hr>
+            <li class="media">
+              <div class="media-left">
+                <a href="#">
+                  <img class="media-object img-circle" src="http://placehold.it/64x64" alt="profile-img">
+                </a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">James B.<br><small>11:45a, Tuesday, February 05, 2016</small></h4>
+                A lectus alias varius itaque, porttitor odio curae eleifend hic nunc assumenda? Quae leo cursus totam! Exercitation, eius convallis nascetur.
+              </div>
+            </li>
+            <hr>
+            <li class="media">
+              <div class="media-left">
+                <a href="#">
+                  <img class="media-object img-circle" src="http://placehold.it/64x64" alt="profile-img">
+                </a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">Jess J.<br><small>11:45a, Tuesday, February 05, 2016</small></h4>
+                Habitasse occaecati dignissim, eaque sint consequatur? Aperiam sapien! Labore massa harum exercitationem, odio cubilia ligula! Ad, sed habitasse scelerisque facilisi.
+              </div>
+              <a href="#">View All</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <h3>Do Something</h3>
+          <p class="text-center">
+            <%= link_to new_prayer_path, class: "btn btn-success" do %>
+              <%= fa_icon "plus" %> Request
+            <% end %>
+          </p>
+          <p class="center-block text-center">
+            <%= link_to praises_path, class: "btn btn-info" do %>
+              <%= fa_icon "eye" %> Praises
+            <% end %>
+            <img src="http://placehold.it/200x200" alt="Profile Picture" id="profile-img" class="img-circle img-responsive">
+            <%= link_to new_praise_path, class: "btn btn-primary" do %>
+              <%= fa_icon "plus" %> Praise
+            <% end %>
+          </p>
+          <p class="text-center">
+            <%= link_to prayers_path, class: "btn btn-warning" do %>
+              <%= fa_icon "eye" %> Prayers
+            <% end %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <% end %>
