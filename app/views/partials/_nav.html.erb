@@ -14,8 +14,11 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="main-nav">
       <ul class="nav navbar-nav">
-        <%= nav_link_to "Home", root_path, {}, {:wrapper => 'li'} %>
+        <% if user_signed_in? %>
+          <%= nav_link_to "Home", user_path, {}, {:wrapper => 'li'} %>
+        <% end %>
         <% unless user_signed_in? %>
+          <%= nav_link_to "Home", root_path, {}, {:wrapper => 'li'} %>
           <%= nav_link_to 'About', about_path, {}, {:wrapper => 'li'} %>
         <% end %>
         <% if user_signed_in? %>

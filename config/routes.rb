@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   root 'static#home'
 
+  get 'user' => 'static#user'
   get 'team' => 'static#team'
   get 'answered' => 'static#answered'
   get 'about' => 'static#about'

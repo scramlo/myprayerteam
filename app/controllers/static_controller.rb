@@ -1,6 +1,6 @@
 class StaticController < ApplicationController
-  def home
-    @profile_img = current_user.profile.profile_img
+  def user
+    @profile = Profile.where(user_id: current_user.id).take
   end
 
   def about
