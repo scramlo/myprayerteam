@@ -1,4 +1,4 @@
-<%= form_for(@prayer) do |f| %>
+<%= bootstrap_form_for(@prayer) do |f| %>
   <% if @prayer.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@prayer.errors.count, "error") %> prohibited this prayer from being saved:</h2>
@@ -11,19 +11,7 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :answered %><br>
-    <%= f.check_box :answered %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.text_field :title %>
+  <%= f.text_area :description %>
+  <%= f.submit %>
 <% end %>
