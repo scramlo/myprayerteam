@@ -6,7 +6,12 @@
         <div class="col-md-12">
           <ul class="list-unstyled">
           <% @warriors.each do |warrior| %>
-            <li class="text-center"><%= warrior.email %><br><img src="http://placehold.it/150x150" alt="Profile Pic" id="team-profile-image" class="img-circle" /><br><a href="#" class="btn btn-primary btn-sm"><i class="fa fa-user-plus"></i> Follow</a></li>
+            <li class="text-center">
+                <%= link_to profile_path(warrior.id) do %>
+                  <img src="<%= warrior.profile.profile_img %>" alt="Profile Pic" id="team-profile-image" class="img-circle" />
+                <% end %>
+              <br>
+              <strong><%= warrior.profile.first_name %> <%= warrior.profile.last_name %></strong>
           <% end %>
           </ul>
         </div>

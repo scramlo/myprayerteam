@@ -1,3 +1,6 @@
+<% if @profile == nil %>
+  :<% controller.redirect_to profiles_path %>
+<% end %>
 <div class="row">
   <div class="panel panel-default">
     <div class="panel-body">
@@ -60,7 +63,13 @@
             <%= link_to praises_path, class: "btn btn-info" do %>
               <%= fa_icon "eye" %> Praises
             <% end %>
-            <img src="<%= @profile.profile_img %>" alt="Profile Picture" id="home-profile-img" class="img-circle img-responsive">
+            <img src="
+            <% if @profile == nil %>
+              http://placehold.it/200x200
+            <% else %>
+              <%= @profile.profile_img %>
+            <% end %>
+            " alt="Profile Picture" id="home-profile-img" class="img-circle img-responsive">
             <%= link_to new_praise_path, class: "btn btn-primary" do %>
               <%= fa_icon "plus" %> Praise
             <% end %>
