@@ -38,6 +38,8 @@ gem 'bootswatch-rails', '~> 3.3', '>= 3.3.5'
 gem 'acts_as_follower', '~> 0.2.1'
 ##Bootstrap Form Helper
 gem 'bootstrap_form'
+##Simple RTE for profiles
+gem 'bootstrap-wysihtml5-rails', github: 'nerian/bootstrap-wysihtml5-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

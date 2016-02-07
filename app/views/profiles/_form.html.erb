@@ -13,7 +13,20 @@
 
     <%= f.text_field :first_name %>
     <%= f.text_field :last_name %>
-    <%= f.text_area :about_me %>
+    <%= f.text_area :about_me, id: "profile-editor", class: "wysihtml5", placeholder: "Share a bit about yourself..." %>
     <%= f.text_field :profile_img %>
     <%= f.submit %>
 <% end %>
+<script type="text/javascript">
+  $(document).on('page:load', function(){
+    window['rangy'].initialized = false
+  })
+
+  $(document).ready(function(){
+
+    $('.wysihtml5').each(function(i, elem) {
+      $(elem).wysihtml5({ toolbar:{ "fa": true, "image": false, "font-styles": false } });
+    });
+
+  })
+</script>

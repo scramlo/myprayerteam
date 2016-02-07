@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/nerian/bootstrap-wysihtml5-rails.git
+  revision: bfb0617a86ae057707c729ec22a140dcf252a26c
+  specs:
+    bootstrap-wysihtml5-rails (0.3.3.7)
+      railties (>= 3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -171,6 +178,7 @@ PLATFORMS
 DEPENDENCIES
   acts_as_follower (~> 0.2.1)
   bootstrap-sass (~> 3.3, >= 3.3.6)
+  bootstrap-wysihtml5-rails!
   bootstrap_form
   bootswatch-rails (~> 3.3, >= 3.3.5)
   byebug
