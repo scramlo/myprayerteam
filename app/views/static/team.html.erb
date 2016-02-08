@@ -1,7 +1,12 @@
-<div class="row">
+  <h1>
+    My Prayer Team
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#findModal">
+      <i class="fa fa-user-plus"></i>
+    </button>
+  </h1>
+  <% if @warriors.any? %>
   <div class="panel panel-default">
     <div class="panel-body">
-      <h3>My Prayer Team</h3>
       <div class="row">
         <div class="col-md-12">
           <ul class="list-unstyled">
@@ -15,6 +20,30 @@
           <% end %>
           </ul>
         </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+  <!-- Modal -->
+<div class="modal fade" id="findModal" tabindex="-1" role="dialog" aria-labelledby="findFriend">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"><i class="fa fa-user-plus"></i> Invite Prayer Warrior</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-inline">
+          <div class="form-group">
+            <input type="text" class="form-control" id="exampleInputName2" placeholder="example@email.com">
+          </div>
+          <button type="submit" class="btn btn-default"><i class="fa fa-paper-plane"></i></button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
